@@ -8,8 +8,6 @@ with open('adjectives.txt', 'r') as inf:
 				n = 0
 				while(n < 100):
 					passPhrase = '{0}{1}{2}'.format(line.strip(), no.strip(), n)
-					f = open('hashlist.txt','a+')
-					f.write('\n{0}'.format(passPhrase))
 					convertToMD5 = hashlib.md5(passPhrase).hexdigest()
 					if convertToMD5 in hashes:
 						print('{0} - at {1}'.format(passPhrase, hashes.index(convertToMD5)))
